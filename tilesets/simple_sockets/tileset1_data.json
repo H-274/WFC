@@ -1,0 +1,240 @@
+{
+  "tilesetName": "First Tileset",
+  "tilesetImagePath": "tilesets/simple_sockets/tileset1_image.png",
+  "tileType": "SimpleTile",
+  "tileCount": 19,
+  "tilesetRows": 5,
+  "tilesetColumns": 4,
+  "singleTileWidth": 30,
+  "singleTileHeight": 30,
+  "tiles": [
+    {
+      "tileCoords": [
+        0,
+        0
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": true,
+        "connectionRight": false,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        1,
+        0
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": false,
+        "connectionRight": true,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        2,
+        0
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": true,
+        "connectionRight": false,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        3,
+        0
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": false,
+        "connectionRight": false,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        0,
+        1
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": false,
+        "connectionRight": true,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        1,
+        1
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": true,
+        "connectionRight": true,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        2,
+        1
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": false,
+        "connectionRight": false,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        3,
+        1
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": false,
+        "connectionRight": true,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        0,
+        2
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": false,
+        "connectionRight": false,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        1,
+        2
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": true,
+        "connectionRight": false,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        2,
+        2
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": false,
+        "connectionRight": true,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        3,
+        2
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": true,
+        "connectionRight": false,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        0,
+        3
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": true,
+        "connectionRight": true,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        1,
+        3
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": true,
+        "connectionRight": true,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        2,
+        3
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": true,
+        "connectionRight": false,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        3,
+        3
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": false,
+        "connectionRight": true,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        0,
+        4
+      ],
+      "socketInformation": {
+        "connectionLeft": false,
+        "connectionUp": false,
+        "connectionRight": false,
+        "connectionDown": false
+      }
+    },
+    {
+      "tileCoords": [
+        1,
+        4
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": true,
+        "connectionRight": true,
+        "connectionDown": true
+      }
+    },
+    {
+      "tileCoords": [
+        2,
+        4
+      ],
+      "socketInformation": {
+        "connectionLeft": true,
+        "connectionUp": true,
+        "connectionRight": true,
+        "connectionDown": true
+      }
+    }
+  ]
+}

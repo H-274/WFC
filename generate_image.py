@@ -1,5 +1,4 @@
 import random
-from _random import Random
 
 from tile_objects.tile import SimpleTile
 from tileset_data_parser import TilesetDataParser
@@ -24,14 +23,12 @@ output_size = (tileset.tile_width * tile_count_width, tileset.tile_height * tile
 output_image = Image.new("RGBA", output_size)
 output_image.save("output.png", "PNG")
 
-cells = []
-
-random_generator = Random(574318857492157483905437956432578490365780437616500000504854905347504317549012057)
+cells = {}
 print(">> Generating empty tiles in the cells")
 for i in range(tile_count_height * tile_count_width):
-    cells.append(
-        SimpleTile(i % tile_count_width, i // tile_count_width)
-    )
+    pos_x = i % tile_count_width
+    pos_y = i // tile_count_width
+    cells[(pos_x, pos_y)] = SimpleTile(pos_x, pos_y)
 
 
 def draw_cell(collapsed_cell):
@@ -61,29 +58,29 @@ for i in range(len(cells)):
     cell_to_draw = None
 
     for cell in cells:
-        if cell.tileset_index is None:
-            cell_neighbours = cell.get_neighbours()
+        if cells[cell].tileset_index is None:
+            cell_neighbours = cells[cell].get_neighbours()
 
             for neighbour in cell_neighbours:  # Determines the required sockets
 
                 try:
-                    neighbour.socket_information = cells[cells.index(neighbour)].socket_information
-                except ValueError:
+                    neighbour.socket_information = cells[(neighbour.pos_x, neighbour.pos_y)].socket_information
+                except KeyError:
                     neighbour.socket_information = [False, False, False, False]  # Comment out the line and replace with pass to ignore border constraint
 
-                if neighbour.pos_x < cell.pos_x:  # Neighbour to the left of cell
-                    cell.socket_information[0] = neighbour.socket_information[2]
-                elif neighbour.pos_y < cell.pos_y:  # Neighbour is above cell
-                    cell.socket_information[1] = neighbour.socket_information[3]
-                elif neighbour.pos_x > cell.pos_x:  # Neighbour is to the right of cell
-                    cell.socket_information[2] = neighbour.socket_information[0]
-                elif neighbour.pos_y > cell.pos_y:  # Neighbour is under cell
-                    cell.socket_information[3] = neighbour.socket_information[1]
+                if neighbour.pos_x < cells[cell].pos_x:  # Neighbour to the left of cell
+                    cells[cell].socket_information[0] = neighbour.socket_information[2]
+                elif neighbour.pos_y < cells[cell].pos_y:  # Neighbour is above cell
+                    cells[cell].socket_information[1] = neighbour.socket_information[3]
+                elif neighbour.pos_x > cells[cell].pos_x:  # Neighbour is to the right of cell
+                    cells[cell].socket_information[2] = neighbour.socket_information[0]
+                elif neighbour.pos_y > cells[cell].pos_y:  # Neighbour is under cell
+                    cells[cell].socket_information[3] = neighbour.socket_information[1]
 
-            cell.entropy = tileset.determine_entropy(cell)
+            cells[cell].entropy = tileset.determine_entropy(cells[cell])
 
-            if cell_to_draw is None or cell.entropy < cell_to_draw.entropy:
-                cell_to_draw = cell
+            if cell_to_draw is None or cells[cell].entropy < cell_to_draw.entropy:
+                cell_to_draw = cells[cell]
 
     cell_to_draw.tileset_index = random.choice(tileset.get_possible_tile_indexes(cell_to_draw))
     chosen_tile_socket_info = tileset.tiles[cell_to_draw.tileset_index]["socketInformation"]

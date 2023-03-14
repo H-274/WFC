@@ -3,7 +3,9 @@ Small wave function collapse algorithm implementation
 
 __HOW TO:__
 
-Just run the "generate_image.py" file with pyton 3.9 installed on your system.
+1. Make sure you have the PIL library in your python environment with its required dependencies.
+
+2. Run the "generate_image.py" file with pyton 3.9.
 
 __Customization:__
 
